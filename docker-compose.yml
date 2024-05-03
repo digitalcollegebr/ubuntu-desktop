@@ -4,8 +4,7 @@ services:
   ubuntu-desktop:
     image: dorowu/ubuntu-desktop-lxde-vnc
     ports:
-      - "5901:5901"
-      - "6901:6901"
+      - "6079:6979"
     environment:
       - VNC_RESOLUTION=1280x720
     volumes:
