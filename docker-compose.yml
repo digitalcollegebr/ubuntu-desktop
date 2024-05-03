@@ -21,7 +21,3 @@ services:
 volumes:
   ubuntu_home:
     driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /var/lib/docker/volumes/ubuntu_home
