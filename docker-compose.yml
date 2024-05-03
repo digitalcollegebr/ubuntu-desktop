@@ -4,6 +4,7 @@ services:
   ubuntu-desktop:
     image: dorowu/ubuntu-desktop-lxde-vnc
     ports:
+      - "2222:22"
       - "5901:5901"
       - "6901:6901"
     environment:
