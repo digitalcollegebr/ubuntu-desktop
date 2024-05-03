@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  ubuntu-desktop:
+    image: dorowu/ubuntu-desktop-lxde-vnc
+    ports:
+      - "5901:5901"
+      - "6901:6901"
+    environment:
+      - VNC_RESOLUTION=1280x720
+    volumes:
+      - ubuntu_home:/home
+    deploy:
+      replicas: 1
+      labels:
+        - "com.portainer.stack.namespace=ubuntu-desktop"
+      placement:
+        constraints:
+          - node.role == manager
+
+volumes:
+  ubuntu_home:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /var/lib/docker/volumes/ubuntu_home
